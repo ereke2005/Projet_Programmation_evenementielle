@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Tableau de Bord | Mentorship</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dashboard.css' %}">
+</head>
+<body>
+    <header class="header">
+        <h1>Bienvenu(e), <span class="username">{{ user.username }}</span> 🎉✨🥳</h1>
+    </header>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/mentorship_requests/">Mentorat</a></li>
+            <li><a href="/sessions/">Sessions</a></li>
+            <li><a href="/features/">Fonctionnalités</a></li>
+            <li><a href="/contact/">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="dashboard-content">
+        <h2>Actions rapides</h2>
+        <div class="actions-grid">
+            <a href="/create_session/" class="btn">Créer une Session</a>
+            <a href="/mentorship_requests/" class="btn">Proposer un Mentorat</a>
+            <a href="/sessions/" class="btn">Voir mes Sessions</a>
+            <a href="/features/" class="btn">Explorer les Fonctionnalités</a>
+        </div>
+    </section>
+
+    <section class="sessions">
+        <h2>Sessions en cours</h2>
+        {% if sessions %}
+            <ul>
+                {% for session in sessions %}
+                    <li>
+                        <strong>{{ session.topic }}</strong><br>
+                        Mentor : {{ session.mentor.user.username }}<br>
+                        Début : {{ session.start_time|date:"d/m/Y H:i" }}<br>
+                        Fin : {{ session.end_time|date:"d/m/Y H:i" }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Aucune session en cours.</p>
+        {% endif %}
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 Mentorship - Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

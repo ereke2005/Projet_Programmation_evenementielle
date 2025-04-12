@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Mentorship - Accueil</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <!-- En-tête -->
+    <header class="header">
+        <h1>Bienvenue sur Mentorship</h1>
+        <p>Une plateforme innovante pour connecter mentors et apprenants.</p>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="/signup/">M'inscrire en tant que mentor</a></li>
+                <li><a href="/login/">Me connecter </a></li>
+               
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Section Principale -->
+    <main class="main-content">
+        <section class="about">
+            <h2>À propos de Mentorship</h2>
+            <p>Découvrez comment nous facilitons l'apprentissage et l'orientation pour un avenir plus brillant.</p>
+            <a href="/about/" class="btn">En savoir plus</a>
+        </section>
+
+        <section class="features">
+            <h2>Fonctionnalités</h2>
+            <ul>
+                <p><strong>Mentorat Personnalisé :</strong> Connectez-vous à des experts dans votre domaine.</p>
+                <p><strong>Sessions Interactives :</strong> Planifiez et participez à des sessions de coaching en ligne.</p>
+                <p><strong>Ressources Riches :</strong> Accédez à des vidéos, quiz, et certifications.</p>
+            </ul>
+            <a href="/features/" class="btn">Explorer les fonctionnalités</a>
+        </section>
+    </main>
+
+    <!-- Pied de page -->
+    <footer class="footer">
+        <p>&copy; 2025 Mentorship - Tous droits réservés.</p>
+        <nav>
+            <ul class="footer-menu">
+                <li><a href="/contact/">Contactez-nous</a></li>
+                <li><a href="/terms/">Conditions d'utilisation</a></li>
+                <li><a href="/privacy/">Politique de confidentialité</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,131 @@
+/* Style général */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff; /* Bleu clair pour le fond */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* En-tête */
+.header {
+    background-color: #007bff; /* Bleu vif */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.username {
+    color: #ff0015af; /* Rouge-orangé vif */
+    font-weight: bold; /* Texte en gras */
+    font-size: 1.2em; /* Taille légèrement agrandie */
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+/* Barre de navigation */
+.navbar {
+    background-color: #0056b3; /* Bleu foncé */
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: #ffdd57; /* Couleur dorée pour le survol */
+}
+
+/* Section contenu */
+.dashboard-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.dashboard-content h2 {
+    color: #333;
+    font-size: 1.5em;
+}
+
+.actions-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #007bff; /* Bleu vif */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Bleu foncé au survol */
+}
+
+/* Section sessions */
+.sessions {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sessions ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sessions li {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+}
+
+.sessions li:last-child {
+    border-bottom: none;
+}
+
+/* Pied de page */
+.footer {
+    text-align: center;
+    font-size: 14px;
+    padding: 15px 0;
+    background-color: #333;
+    color: white;
+    margin-top: auto; /* Assure que le footer reste en bas */
+}

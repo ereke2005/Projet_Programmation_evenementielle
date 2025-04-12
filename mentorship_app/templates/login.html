@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Connexion</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Bienvenue dans Mentorship !</h1>
+    </header>
+    <section class="login-container">
+        <h2>Connexion à votre compte</h2>
+        <form action="{% url 'login' %}" method="POST">  <!-- Utilise la balise URL Django -->
+            {% csrf_token %}
+
+            {% if form.non_field_errors %}
+    <ul class="errorlist nonfield">
+        {% for error in form.non_field_errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+            <label for="username">Nom d'utilisateur :</label>
+            <input type="text" id="username" name="username" required>
+        
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" name="password" required>
+        
+            <button type="submit" class="btn">Se connecter</button>
+        </form>
+        <p class="info">
+            Vous n'avez pas de compte ? <a href="/signup/">Inscrivez-vous ici</a>
+        </p>
+    </section>
+    <footer>
+        <p>&copy; 2025 Mentorship - Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

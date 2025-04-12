@@ -1,0 +1,97 @@
+/* Styles généraux */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* En-tête */
+.header {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    padding: 30px;
+}
+
+.header h1 {
+    font-size: 2.2em;
+    margin: 0;
+}
+
+.header p {
+    font-size: 1.2em;
+    margin-top: 5px;
+}
+
+/* Liste des fonctionnalités */
+.features-list {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.features-list h2 {
+    color: #007bff;
+    font-size: 1.8em;
+}
+
+.features-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.features-list p {
+    background-color: #f4f4f4;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+}
+
+.features-list p:hover {
+    transform: scale(1.05);
+    background-color: #e0e0e0;
+}
+
+/* Boutons */
+.btn {
+    display: inline-block;
+    padding: 12px 18px;
+    margin: 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Bouton retour */
+.return-section {
+    margin-top: 20px;
+}
+
+.return-btn {
+    background-color: #ff9800;
+}
+
+.return-btn:hover {
+    background-color: #e68900;
+}
+
+/* Pied de page */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    margin-top: 30px;
+}

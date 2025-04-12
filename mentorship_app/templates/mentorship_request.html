@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Demande de Mentorat</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/mentorship_request.css' %}">
+</head>
+<body>
+    <header class="header">
+        <h1>Faire une proposition de Mentorat</h1>
+    </header>
+
+    <section class="form-section">
+        <form action="#" method="POST">
+            <label for="interest">Domaine d'intérêt :</label>
+            <input type="text" id="interest" name="interest" placeholder="Exemple : Programmation, Design" required>
+
+            <label for="language">Langue préférée :</label>
+            <input type="text" id="language" name="language" placeholder="Exemple : Français, Anglais" required>
+
+            <label for="time_zone">Fuseau horaire :</label>
+            <input type="text" id="time_zone" name="time_zone" placeholder="Exemple : UTC+1, UTC+2" required>
+
+            <label for="notes">Description supplémentaire :</label>
+            <textarea id="notes" name="notes" placeholder="Expliquez vos besoins (facultatif)" rows="4"></textarea>
+
+            <button type="submit" class="btn">Faire la proposition</button>
+            
+        </form>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 Mentorship - Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

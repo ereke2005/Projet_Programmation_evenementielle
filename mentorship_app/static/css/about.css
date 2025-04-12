@@ -1,0 +1,94 @@
+/* Styles généraux */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+}
+
+/* En-tête */
+.header {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    padding: 20px;
+    margin: 0;
+   
+    display: flex; /* Flexbox pour centrer le contenu */
+    flex-direction: column;
+    justify-content: center; /* Centre verticalement */
+    align-items: center; /* Centre horizontalement */
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 3em;
+}
+
+/* Contenu principal */
+.about-content {
+    flex-grow: 1; /* Permet au contenu principal de prendre l'espace disponible */
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    justify-content: center; /* Centre verticalement */
+    align-items: center; /* Centre horizontalement */
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Objectifs */
+.goals ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.goals ul li {
+    background-color: #f4f4f4;
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Boutons */
+.buttons-container {
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    margin: 10px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Bouton retour */
+.return-btn {
+    background-color: #ff9800;
+}
+
+.return-btn:hover {
+    background-color: #e68900;
+}
+
+/* Pied de page */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: auto; /* Assure que le footer reste au bas de la page */
+}

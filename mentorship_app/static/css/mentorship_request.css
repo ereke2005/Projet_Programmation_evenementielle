@@ -1,0 +1,108 @@
+/* Styles généraux */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+}
+
+/* En-tête */
+.header {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    padding: 20px 0;
+    margin-bottom: 20px;
+    text-align: center;
+    align-items: center;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+/* Section Formulaire */
+.form-section {
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px 30px;
+    background: white;
+    border-radius: 8px;
+    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-grow: 1; /* Permet à cette section de remplir l'espace disponible */
+}
+
+.form-section label {
+    display: block;
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    align-items: center;
+    text-align: center;
+    color: #333;
+}
+
+.form-section input[type="text"],
+.form-section input[type="email"],
+.form-section textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: 'Arial', sans-serif;
+}
+
+.form-section input:focus,
+.form-section textarea:focus {
+    border-color: #007bff;
+    background-color: #f7faff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+textarea {
+    resize: none; /* Empêche le redimensionnement */
+}
+
+/* Bouton d'envoi */
+.btn {
+    display: inline-block;
+    display: inline-block;
+    padding: 12px 20px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-left: 390px;
+    border: none;
+   
+  
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Pied de page */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    font-size: 0.9em;
+    padding: 10px 0;
+    margin-top: auto; /* Assure que le footer reste en bas */
+}

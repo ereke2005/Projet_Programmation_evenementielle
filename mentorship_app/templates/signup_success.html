@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscription réussie</title>
+    <link rel="stylesheet" href="{% static 'css/sucess.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Bienvenue dans Mentorship !</h1>
+    </header>
+    <section>
+        <h2>Inscription réussie 🎉</h2>
+        <p>Merci de vous être inscrit, {{ username }} !</p>
+        <p>Votre compte a été créé avec succès. Vous pouvez maintenant explorer nos fonctionnalités exclusives et rejoindre une communauté de mentors et de mentors en herbe.</p>
+        <a href="/login/" class="btn">Se connecter</a>
+    </section>
+    <footer>
+        <p>&copy; 2025 Mentorship - Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
