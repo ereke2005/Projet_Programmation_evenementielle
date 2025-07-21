@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-u76^37%5_rwl!7@do=r&f=q=9=+ljt5wo8qmlgi!0@uuz(rym2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -50,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'mentorship.urls'
@@ -122,6 +123,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "mentorship_app/static"]
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/dashboard/'  # Redirige vers le tableau de bord
+AUTH_USER_MODEL = 'mentorship_app.User'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
@@ -131,9 +133,18 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'  # Exemple pour Gmail
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'ton_adresse_email@gmail.com'
-EMAIL_HOST_PASSWORD = 'ton_mot_de_passe'
-DEFAULT_FROM_EMAIL = 'ton_adresse_email@gmail.com'
+EMAIL_HOST_USER = 'rachelbinawai@gmail.com'
+EMAIL_HOST_PASSWORD = 'rsrc ezlc rzwl npcg'
+DEFAULT_FROM_EMAIL = 'rachelbinawai@gmail.com'
 LOGIN_REDIRECT_URL = 'home' 
 AUTH_USER_MODEL = 'mentorship_app.User'  
 LOGOUT_REDIRECT_URL = 'login' 
+
+
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+

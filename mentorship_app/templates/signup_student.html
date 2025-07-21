@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscription Étudiant</title>
+    <link rel="stylesheet" href="{% static 'css/student_signup.css' %}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <div class="signup-container">
+        <h2>🎓 Inscription Étudiant</h2>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <label for="username">Nom d'utilisateur :</label>
+            <input type="text" name="username" id="username" required>
+
+            <label for="email">Email :</label>
+            <input type="email" name="email" id="email" required>
+
+            <label for="password">Mot de passe :</label>
+            <input type="password" name="password" id="password" required>
+
+            <label for="level">Niveau :</label>
+            <select name="level" id="level" required>
+                <option value="Débutant">Débutant</option>
+                <option value="Intermédiaire">Intermédiaire</option>
+                <option value="Avancé">Avancé</option>
+            </select>
+
+            <button type="submit">S'inscrire</button>
+        </form>
+
+        <div class="login-link">
+            <a href="{% url 'login' %}" class="btn-login">🔐 Se connecter</a>
+        </div>
+    </div>
+
+</body>
+</html>

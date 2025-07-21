@@ -1,0 +1,14 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Activation réussie</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/activation.css' %}">
+</head>
+<body>
+    <h1>Votre compte a été activé avec succès !</h1>
+    <p>Vous pouvez maintenant <a href="{% url 'login' %}">vous connecter</a>.</p>
+</body>
+</html>

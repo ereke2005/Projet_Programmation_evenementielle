@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz avancés</title>
+    <link rel="stylesheet" href="{% static 'css/quiz_lists.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <h2>Quiz avancés</h2>
+
+    <form method="POST" action="{% url 'submit_quiz_answers' %}">
+        {% csrf_token %}
+        <ul>
+            {% for quiz in quizzes %}
+                <li>
+                    <strong>Question :</strong> {{ quiz.question }}<br>
+                    <label><input type="radio" name="response_{{ quiz.id }}" value="{{ quiz.option1 }}" required> {{ quiz.option1 }}</label><br>
+                    <label><input type="radio" name="response_{{ quiz.id }}" value="{{ quiz.option2 }}"> {{ quiz.option2 }}</label><br>
+                    <label><input type="radio" name="response_{{ quiz.id }}" value="{{ quiz.option3 }}"> {{ quiz.option3 }}</label>
+                    <hr>
+                </li>
+            {% endfor %}
+        </ul>
+        <button type="submit" class="btn">Envoyer mes réponses</button>
+    </form>
+
+    <a href="{% url 'dashboard_student' %}">← Retour au tableau de bord</a>
+
+    {% if messages %}
+    <script>
+      {% for message in messages %}
+        {% if forloop.first %}
+          Swal.fire({
+            icon: "{{ message.tags }}",
+            title: "{{ message|escapejs }}",
+            timer: 3500,
+            timerProgressBar: true,
+            showConfirmButton: false
+          });
+        {% endif %}
+      {% endfor %}
+    </script>
+    {% endif %}
+</body>
+</html>

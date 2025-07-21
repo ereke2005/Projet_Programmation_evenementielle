@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ action }} un Quiz</title>
+    <link rel="stylesheet" href="{% static 'css/contents.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>{{ action }} un Quiz</h2>
+        <form method="POST">
+            {% csrf_token %}
+
+            <label for="question">Question :</label>
+            <textarea id="question" name="question" required>{{ quiz.question|default_if_none:'' }}</textarea>
+
+            <label for="option1">Option 1 :</label>
+            <input type="text" id="option1" name="option1" value="{{ quiz.option1|default_if_none:'' }}" required>
+
+            <label for="option2">Option 2 :</label>
+            <input type="text" id="option2" name="option2" value="{{ quiz.option2|default_if_none:'' }}" required>
+
+            <label for="option3">Option 3 :</label>
+            <input type="text" id="option3" name="option3" value="{{ quiz.option3|default_if_none:'' }}" required>
+
+            <label for="correct_answer">Réponse correcte :</label>
+            <input type="text" id="correct_answer" name="correct_answer" value="{{ quiz.correct_answer|default_if_none:'' }}" required>
+
+            <label for="difficulty">Niveau de difficulté :</label>
+            <select name="difficulty" id="difficulty" required>
+                <option value="basic" {% if quiz.difficulty == "basic" %}selected{% endif %}>Basique</option>
+                <option value="intermediate" {% if quiz.difficulty == "intermediate" %}selected{% endif %}>Intermédiaire</option>
+                <option value="advanced" {% if quiz.difficulty == "advanced" %}selected{% endif %}>Avancé</option>
+            </select>
+
+            <button type="submit">{{ action }}</button>
+        </form>
+
+        <a href="{% url 'quiz_list' %}" class="back-button">← Retour à la liste des quiz</a>
+
+    </div>
+</body>
+</html>

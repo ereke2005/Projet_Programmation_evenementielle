@@ -1,100 +1,117 @@
-/* Styles généraux */
+
+
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f9f9f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #fceae8, #e0f7fa);
     margin: 0;
     padding: 0;
-    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-/* En-tête */
 .header {
-    background: linear-gradient(135deg, #007bff, #0056b3);
+    background-color: #0984e3;
     color: white;
-    padding: 30px;
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .header h1 {
-    font-size: 2.5em;
     margin: 0;
+    font-size: 2.2rem;
 }
 
 .header p {
-    font-size: 1.2em;
-    margin-top: 10px;
+    margin: 10px 0 0;
+    font-size: 1.1rem;
 }
 
-/* Formulaire de création de compte */
 .form-section {
-    margin: 30px auto;
-    width: 70%;
-    padding: 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
 }
 
-.form-section form label {
+form {
+    background-color: white;
+    padding: 35px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    width: 100%;
+    max-width: 500px;
+}
+
+label {
     display: block;
-    font-weight: bold;
-    margin: 10px 0 5px;
-    color: #333;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    color: #2d3436;
+    font-weight: 600;
 }
 
-.form-section input[type="text"],
-.form-section input[type="email"],
-.form-section input[type="password"],
-.form-section input[type="file"] {
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"] {
     width: 100%;
     padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
 }
 
-.form-section input:focus {
-    border-color: #007bff;
+input:focus {
+    border-color: #00b894;
     outline: none;
 }
 
-/* Bouton d'inscription */
 .btn {
-    display: inline-block;
-    padding: 10px 15px;
-    margin-top: 15px;
-    background-color: #007bff;
+    display: block;
+    width: 100%;
+    margin-top: 25px;
+    padding: 12px;
+    background-color: #00b894;
     color: white;
-    text-decoration: none;
-    border-radius: 5px;
+    font-size: 1rem;
     font-weight: bold;
-    cursor: pointer;
+    text-align: center;
     border: none;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
 }
 
 .btn:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
+    background-color: #26de81;
 }
 
-/* Pied de page */
+.btn-primary {
+    background-color: #0984e3;
+    margin-top: 15px;
+}
+
+.btn-primary:hover {
+    background-color: #74b9ff;
+}
+
+p[style*="color: red;"] {
+    margin-top: 15px;
+    color: #d63031;
+    text-align: center;
+}
+
 .footer {
-    background-color: #333;
-    color: white;
-    padding: 15px;
-    margin-top: 30px;
-    font-size: 0.9em;
-}
-
-/* Style spécifique pour les champs d'upload */
-.form-section input[type="file"] {
-    padding: 8px;
-    border: 1px dashed #007bff;
-    background-color: #f7f7f7;
-}
-
-.form-section input[type="file"]:hover {
-    border-color: #0056b3;
-    background-color: #eef6ff;
+    text-align: center;
+    padding: 20px 0;
+    background-color: #080808;
+    color: #636e72;
+    font-size: 0.9rem;
+    border-top: 1px solid #b2bec3;
 }

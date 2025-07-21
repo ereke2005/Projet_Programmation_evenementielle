@@ -1,109 +1,160 @@
-/* Style général */
-html, body {
-    height: 100%;
+
+* {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f0f8ff; /* Bleu clair pour le fond */
+    box-sizing: border-box;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    padding-bottom: 60px;
 }
 
-/* En-tête */
+
 .header {
-    background-color: #007bff; /* Bleu vif */
+    background-color: #004466;
     color: white;
-    padding: 20px;
     text-align: center;
+    padding: 1.5rem;
+    font-size: 1.2rem;
 }
 
-.username {
-    color: #ff0015af; /* Rouge-orangé vif */
-    font-weight: bold; /* Texte en gras */
-    font-size: 1.2em; /* Taille légèrement agrandie */
+.header-content {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #004466;
+    padding: 10px 20px;
 }
 
-.header h1 {
-    margin: 0;
-    font-size: 2em;
+.logout-btn {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 8px 14px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
-/* Barre de navigation */
+.logout-btn:hover {
+    background-color: #c0392b;
+}
+
 .navbar {
-    background-color: #0056b3; /* Bleu foncé */
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #022c43;
+    padding: 1rem 0;
 }
 
 .navbar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
     justify-content: center;
+    gap: 2rem;
+    list-style: none;
 }
 
-.navbar ul li {
-    margin: 0 15px;
-}
-
-.navbar ul li a {
+.navbar a {
     color: white;
     text-decoration: none;
-    font-size: 1.2em;
+    font-weight: bold;
     transition: color 0.3s ease;
 }
 
-.navbar ul li a:hover {
-    color: #ffdd57; /* Couleur dorée pour le survol */
+.navbar a:hover {
+    color: #00aaff;
 }
 
-/* Section contenu */
 .dashboard-content {
-    padding: 20px;
-    text-align: center;
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
 }
 
-.dashboard-content h2 {
-    color: #333;
-    font-size: 1.5em;
+
+h2 {
+    margin-bottom: 1rem;
+    color: #004466;
+}
+.sessions {
+    background-color: #f0f8ff; /* bleu très clair */
+    padding: 20px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.15);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 30px;
+}
+
+.sessions h2 {
+    color: #007bff; /* bleu principal */
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0, 123, 255, 0.3);
+}
+
+.sessions ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.sessions li {
+    background-color: #ffffff;
+    border-left: 5px solid #007bff;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+    cursor: default;
+}
+
+.sessions li:hover {
+    box-shadow: 0 6px 18px rgba(0, 123, 255, 0.25);
+    transform: translateY(-3px);
+}
+
+.sessions strong {
+    font-weight: 700;
+    color: #004a99; 
+    font-size: 1.1rem;
+}
+
+.sessions p {
+    font-style: italic;
+    color: #555;
+    font-size: 1rem;
+}
+
+
+.quick-actions {
+    margin-bottom: 2rem;
 }
 
 .actions-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
+    gap: 1rem;
 }
 
 .btn {
-    display: inline-block;
-    padding: 12px 20px;
-    background-color: #007bff; /* Bleu vif */
+    background-color: #0077cc;
     color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
     text-decoration: none;
-    border-radius: 5px;
-    font-size: 1em;
+    text-align: center;
+    font-weight: 600;
     transition: background-color 0.3s ease;
 }
 
 .btn:hover {
-    background-color: #0056b3; /* Bleu foncé au survol */
+    background-color: #005fa3;
 }
 
-/* Section sessions */
-.sessions {
-    max-width: 800px;
-    margin: 30px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
 
 .sessions ul {
     list-style: none;
@@ -111,21 +162,76 @@ body {
 }
 
 .sessions li {
-    padding: 15px;
-    border-bottom: 1px solid #ddd;
-    color: #333;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-.sessions li:last-child {
-    border-bottom: none;
-}
 
-/* Pied de page */
 .footer {
-    text-align: center;
-    font-size: 14px;
-    padding: 15px 0;
-    background-color: #333;
+    background-color: #040607ec;
     color: white;
-    margin-top: auto; /* Assure que le footer reste en bas */
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.personalized-requests {
+    background: linear-gradient(135deg, #3a9ad9, #1abc9c); 
+    color: #fff;
+    padding: 20px 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(26, 188, 156, 0.4);
+    margin-top: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: transform 0.3s ease;
+}
+
+.personalized-requests:hover {
+    transform: scale(1.03);
+}
+
+.personalized-requests h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    letter-spacing: 1.2px;
+}
+
+.personalized-requests ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.personalized-requests li {
+    background: rgba(255, 255, 255, 0.12);
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.1);
+    transition: background 0.25s ease;
+}
+
+.personalized-requests li:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.personalized-requests strong {
+    display: inline-block;
+    width: 120px;
+    font-weight: 700;
+    color: #e0f7f1; 
+}
+
+.personalized-requests em {
+    font-style: italic;
+    font-size: 0.85rem;
+    opacity: 0.85;
+    display: block;
+    margin-top: 8px;
+    color: red; 
 }

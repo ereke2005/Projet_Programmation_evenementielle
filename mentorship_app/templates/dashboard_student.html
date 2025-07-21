@@ -1,0 +1,146 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Tableau de bord étudiant</title>
+    <link rel="stylesheet" href="{% static 'css/student_dashboard.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+ 
+    <header class="dashboard-header">
+        <div class="header-content">
+            <h1>👩‍🎓 Bienvenue, {{ user.username }} !</h1>
+            <p class="student-level">Niveau : {{ user.student_profile.level }}</p>
+            <a href="{% url 'logout' %}" class="logout-btn">Se déconnecter</a>
+        </div>
+    </header>
+
+    <main class="dashboard-main">
+
+        <section class="custom-session-requests">
+            <h2>📌 Mes demandes de session personnalisée</h2>
+            {% if demandes_personnalisees %}
+                <ul class="custom-request-list">
+                    {% for demande in demandes_personnalisees %}
+                        <li>
+                            <strong>Sujet :</strong> {{ demande.subject }}<br>
+                            <strong>Détails :</strong> {{ demande.details }}<br>
+                            <em>Envoyée le {{ demande.submitted_at|date:"d M Y H:i" }}</em>
+                            <form method="POST" action="{% url 'delete_custom_request' demande.id %}" style="margin-top: 10px;">
+                                {% csrf_token %}
+                                <button type="submit" class="btn-delete">🗑️ Supprimer la demande</button>
+                            </form>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>Vous n'avez pas encore envoyé de demande personnalisée.</p>
+            {% endif %}
+        </section>
+        <section class="resources">
+            <h2> Ressources recommandées</h2>
+            <ul class="resource-links">
+                <li><a href="{% url 'videos_list' %}"> Voir les vidéos pédagogiques</a></li>
+                <li><a href="{% url 'quiz_lists' %}"> Participer à un quiz</a></li>
+                <li><a href="{% url 'demande_session' %}"> Demander une session personnalisée</a></li>
+            </ul>
+        </section>
+
+        <section class="upcoming-sessions">
+            <h2> Mes sessions à venir</h2>
+            {% if sessions_inscrites %}
+                <ul class="session-list">
+                    {% for session in sessions_inscrites %}
+                        <li class="session-item">
+                            <strong>{{ session.topic }}</strong><br>
+                            🗓️ Du {{ session.start_time|date:"d M Y H:i" }} au {{ session.end_time|date:"d M Y H:i" }}<br>
+                            👨‍🏫 Mentor : {{ session.mentor.user.username }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>Aucune session programmée pour le moment.</p>
+            {% endif %}
+        </section>
+
+        <section class="public-sessions">
+            <h2> Sessions ouvertes à tous</h2>
+            {% if sessions_publiques %}
+                <ul class="session-list">
+                    {% for session in sessions_publiques %}
+                        <li class="session-item">
+                            <strong>{{ session.topic }}</strong><br>
+                            👨‍🏫 Mentor : {{ session.mentor.user.username }}<br>
+                            🗓️ Du {{ session.start_time|date:"d M Y H:i" }} au {{ session.end_time|date:"d M Y H:i" }}<br>
+
+                            {% if session.id in sessions_postulees_ids %}
+                                <form method="POST" action="{% url 'cancel_application' session.id %}">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn-cancel">❌ Annuler la participation</button>
+                                </form>
+                            {% else %}
+                                <form method="POST" action="{% url 'apply_to_session' session.id %}">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn-apply">✅ Je souhaite participer</button>
+                                </form>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>Aucune session publique disponible actuellement.</p>
+            {% endif %}
+        </section>
+
+        
+        <section class="mentorship-requests">
+            <h2> Demandes de mentorat</h2>
+            {% if mentorships %}
+                <form method="POST" action="{% url 'apply_to_mentorship' %}">
+                    {% csrf_token %}
+                    <ul class="mentorship-list">
+                        {% for request in mentorships %}
+                            <li>
+                                <label class="mentorship-item">
+                                    <input type="checkbox" name="mentorship_requests" value="{{ request.id }}"
+                                        {% if request.id in mentorships_applied_ids %}checked disabled{% endif %}>
+                                    <strong>Domaine :</strong> {{ request.interest }}<br>
+                                    <strong>Langue :</strong> {{ request.language }}<br>
+                                    <strong>Fuseau horaire :</strong> {{ request.time_zone }}<br>
+                                    <em>{{ request.notes }}</em>
+                                    {% if request.id in mentorships_applied_ids %}
+                                        <span class="status-postule">● Postulé</span>
+                                    {% endif %}
+                                </label>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    <button type="submit" class="btn-apply">📤 Postuler aux demandes sélectionnées</button>
+                </form>
+            {% else %}
+                <p>Aucune demande de mentorat pour le moment.</p>
+            {% endif %}
+        </section>
+
+    </main>
+
+    <footer class="dashboard-footer">
+        <p>&copy; 2025 Mentorship - Espace étudiant</p>
+    </footer>
+
+    {% if messages %}
+    <script>
+        Swal.fire({
+            toast: true,
+            position: 'bottom-end',
+            icon: 'success',
+            title: '🎉 Action réalisée avec succès !',
+            showConfirmButton: false,
+            timer: 3000
+        });
+    </script>
+    {% endif %}
+</body>
+</html>

@@ -1,119 +1,117 @@
-/* Styles généraux */
+
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f0f4f8, #dff9fb);
     margin: 0;
     padding: 0;
-    background-color: #f0f8ff; /* Bleu très clair */
-    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-/* En-tête */
 header {
-    background-color: #0077cc; /* Bleu vif */
+    background-color: #0984e3;
+    padding: 20px 0;
+    text-align: center;
     color: white;
-    padding: 20px 10px;
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Conteneur de connexion */
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
 .login-container {
-    margin: 50px auto;
-    padding: 20px;
-    max-width: 400px;
-    text-align: center;
     background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 119, 204, 0.2); /* Ombre bleue subtile */
-    border-radius: 10px;
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-/* Champs de formulaire */
-form label {
+.login-container h2 {
+    margin-bottom: 25px;
+    color: #2d3436;
+}
+
+label {
     display: block;
-    font-size: 16px;
-    margin-top: 10px;
-    color: #333;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    text-align: left;
+    color: #2c3e50;
+    font-weight: 600;
 }
 
-form input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    border: 1px solid #0077cc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-/* Bouton de connexion */
-form .btn {
+input[type="text"],
+input[type="password"] {
     width: 100%;
     padding: 12px;
-    background-color: #0077cc; /* Vert succès */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #0984e3;
+    outline: none;
+}
+
+.btn {
+    width: 100%;
+    margin-top: 25px;
+    padding: 12px;
+    background-color: #0984e3;
     color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-}
-
-form .btn:hover {
-    background-color: #006400; /* Vert foncé au survol */
-}
-
-/* Message d'erreur */
-.messages {
-    list-style: none;
-    padding: 0;
-}
-
-.messages li {
-    color: red;
+    font-size: 1rem;
     font-weight: bold;
-    margin-bottom: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-/* Informations supplémentaires */
-.info {
-    margin-top: 15px;
-    font-size: 14px;
+.btn:hover {
+    background-color: #74b9ff;
 }
-.info a {
-    color: #0077cc;
+
+p.info {
+    margin-top: 15px;
+    font-size: 0.95rem;
+}
+
+p.info a {
+    color: #0984e3;
     text-decoration: none;
 }
-.info a:hover {
+
+p.info a:hover {
     text-decoration: underline;
 }
 
-/* Pied de page */
 footer {
-    margin-top: 40px;
     text-align: center;
-    font-size: 14px;
     padding: 15px 0;
-   
-    background-color: #333;
-    color: white;
-    padding: 15px;
-    margin-top: 30px;
-    font-size: 0.9em;
+    background-color: #09090a;
+    color: #636e72;
+    font-size: 0.9rem;
+    margin-top: auto;
+    border-top: 1px solid #dcdde1;
 }
+
 
 .errorlist {
-    color: red; /* Affichage en rouge */
-    font-weight: bold;
-    list-style: none;
-    padding: 0;
-}
-
-.errorlist li {
-    margin-bottom: 5px;
-    font-size: 16px;
-}
-
-.errorlist.nonfield {
-    color: #ff4500; /* Rouge-orangé pour les erreurs générales */
+    background-color: #ffe6e6;
+    color: #c0392b;
+    padding: 10px;
+    border-radius: 8px;
+    list-style-type: none;
+    margin-bottom: 20px;
 }

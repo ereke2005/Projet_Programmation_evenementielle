@@ -1,108 +1,92 @@
-/* Style général */
-html, body {
-    height: 100%;
+
+* {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f0f8ff; /* Bleu clair pour le fond */
+    box-sizing: border-box;
 }
 
+
 body {
+    font-family: "Segoe UI", sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-/* En-tête */
+
 header {
-    background-color: #007bff; /* Bleu vif */
+    background-color: #004466;
     color: white;
-    padding: 20px;
+    padding: 1.5rem 1rem;
     text-align: center;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2em;
-}
-
-/* Section principale */
-main {
-    flex-grow: 1; /* Permet à la section principale de prendre tout l'espace disponible */
-    max-width: 500px;
-    margin: 20px auto;
-    padding: 15px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    overflow-y: auto; /* Permet un défilement si nécessaire */
-    height: 70vh; /* Limite la hauteur à une portion de l'écran */
-}
-
-/* Style des inputs */
-input, select, textarea {
-    width: 90%;
-    padding: 10px;
-    margin: 8px auto;
-    border: 2px solid #007bff; /* Bordure bleue */
-    border-radius: 5px;
-    font-size: 0.9em; /* Texte légèrement plus petit */
-    transition: all 0.3s ease-in-out;
-}
-
-input:focus, select:focus, textarea:focus {
-    border-color: #0056b3; /* Bleu plus foncé */
-    outline: none;
-    box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.5); /* Effet lumineux */
-}
-
-/* Labels */
-label {
+    font-size: 1.5rem;
     font-weight: bold;
-    color: #333;
+}
+
+
+main {
+    flex: 1;
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+
+form p {
+    margin-bottom: 1rem;
+}
+
+label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
 }
 
-/* Bouton */
-button.btn {
-    width: 90%;
-    padding: 10px;
-    background-color: blue; /* Vert succès */
+input[type="text"],
+input[type="datetime-local"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+
+.btn {
+    background-color: #0077cc;
     color: white;
     border: none;
-    border-radius: 5px;
-    font-size: 1em;
+    padding: 0.75rem 1.5rem;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    border-radius: 6px;
+    font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-button.btn:hover {
-    background-color: #218838; /* Vert foncé au survol */
+.btn:hover {
+    background-color: #005fa3;
 }
 
-/* Pied de page */
+.back-btn {
+    background-color: #999;
+}
+
+.back-btn:hover {
+    background-color: #777;
+}
+
 .footer {
-    text-align: center;
-    font-size: 14px;
-    padding: 15px 0;
-    background-color: #333;
+    background-color: #004466;
     color: white;
-    margin-top: auto; /* Assure que le footer reste en bas */
-}
-
-button.back-btn {
-    width: 90%; /* S'adapte à la largeur des autres boutons */
-    padding: 10px;
-    margin-top: 10px;
-    background-color: #ffc107; /* Jaune pour une distinction visuelle */
-    color: #333; /* Couleur texte foncée */
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button.back-btn:hover {
-    background-color: #e0a800; /* Jaune foncé au survol */
+    text-align: center;
+    padding: 1rem;
 }

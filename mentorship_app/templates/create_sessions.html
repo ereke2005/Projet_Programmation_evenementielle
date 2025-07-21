@@ -9,14 +9,40 @@
     <header>
         <h1>Créer une Session de Coaching</h1>
     </header>
+
     <main>
         <form action="{% url 'create_session' %}" method="POST">
             {% csrf_token %}
-            {{ form.as_p }} <!-- Affiche le formulaire Django -->
+
+            <div class="form-section">
+                {{ form.non_field_errors }}
+                
+                <label for="id_topic">Sujet de la session</label>
+                {{ form.topic }}
+
+                <label for="id_start_time">Date et heure de début</label>
+                {{ form.start_time }}
+
+                <label for="id_end_time">Date et heure de fin</label>
+                {{ form.end_time }}
+
+                <label for="id_description">Description</label>
+                {{ form.description }}
+
+                <label for="id_students">Sélectionner les étudiants (optionnel)</label>
+                <div class="checkbox-list">
+                    {{ form.students }}
+                </div>
+
+                <label for="id_is_public">Session publique ?</label>
+                {{ form.is_public }}
+            </div>
+
             <button type="submit" class="btn">Créer la Session</button>
             <button type="button" class="btn back-btn" onclick="history.back()">Retour</button>
         </form>
     </main>
+
     <footer class="footer">
         <p>&copy; 2025 Mentorship - Tous droits réservés.</p>
     </footer>

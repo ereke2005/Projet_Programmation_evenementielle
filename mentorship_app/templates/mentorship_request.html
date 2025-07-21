@@ -11,7 +11,8 @@
     </header>
 
     <section class="form-section">
-        <form action="#" method="POST">
+        <form action="{% url 'mentorship_request' %}" method="POST">
+            {% csrf_token %}
             <label for="interest">Domaine d'intérêt :</label>
             <input type="text" id="interest" name="interest" placeholder="Exemple : Programmation, Design" required>
 

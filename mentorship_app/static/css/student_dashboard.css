@@ -1,0 +1,206 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: #2563eb; /* Bleu vif */
+    font-weight: 600;
+}
+
+a:hover {
+    color: #1e40af;
+    text-decoration: underline;
+}
+
+.dashboard-header {
+    background: #2563eb; /* Bleu vif */
+    color: white;
+    padding: 20px 30px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.6);
+}
+
+.dashboard-header h1 {
+    margin: 0;
+    font-size: 2.4em;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.dashboard-header p {
+    margin: 5px 0 0;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.logout-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background-color: white;
+    color: #2563eb;
+    padding: 8px 18px;
+    border-radius: 12px;
+    font-weight: 700;
+    box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #e0e7ff;
+    color: #1e40af;
+    box-shadow: 0 6px 15px rgba(30, 64, 175, 0.5);
+}
+
+.dashboard-main {
+    padding: 30px 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+}
+
+.dashboard-main section {
+    background-color: #ffffffcc; /* Blanc semi-transparent */
+    padding: 30px 35px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.15);
+    backdrop-filter: saturate(180%) blur(12px);
+    transition: box-shadow 0.3s ease;
+}
+
+.dashboard-main section:hover {
+    box-shadow: 0 15px 40px rgba(37, 99, 235, 0.3);
+}
+
+.dashboard-main h2 {
+    margin-top: 0;
+    color: #1e3a8a;
+    font-size: 1.7em;
+    border-left: 6px solid #2563eb;
+    padding-left: 14px;
+    margin-bottom: 25px;
+    letter-spacing: 0.05em;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 22px;
+    background-color: #f0f9ff;
+    padding: 20px 25px;
+    border-radius: 12px;
+    border-left: 8px solid #93c5fd;
+    box-shadow: 0 3px 10px rgba(37, 99, 235, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+li:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.2);
+}
+
+.btn-apply,
+.btn-cancel,
+.btn-delete {
+    padding: 12px 22px;
+    border: none;
+    border-radius: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.35s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.2);
+    display: inline-block;
+    margin-top: 12px;
+}
+
+.btn-apply {
+    background-color: #2563eb;
+    color: #fff;
+}
+
+.btn-apply:hover {
+    background-color: #1e40af;
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(30, 64, 175, 0.4);
+}
+
+.btn-cancel {
+    background-color: #ef4444; /* Rouge vif */
+    color: white;
+    box-shadow: 0 4px 14px rgba(239, 68, 68, 0.3);
+}
+
+.btn-cancel:hover {
+    background-color: #b91c1c;
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(185, 28, 28, 0.5);
+}
+
+.btn-delete {
+    background-color: #f97316; /* Orange vif */
+    color: white;
+    box-shadow: 0 4px 14px rgba(249, 115, 22, 0.3);
+}
+
+.btn-delete:hover {
+    background-color: #c2410c;
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(194, 65, 12, 0.5);
+}
+
+.status-postule {
+    background-color: #d1fae5;
+    color: #065f46;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 10px;
+    box-shadow: 0 2px 8px rgba(6, 95, 70, 0.3);
+    font-size: 0.9em;
+}
+
+.dashboard-footer {
+    text-align: center;
+    padding: 20px 10px;
+    background-color: #1e293b; /* Gris foncé */
+    color: #f8fafc;
+    margin-top: 60px;
+    font-size: 0.95em;
+    letter-spacing: 0.02em;
+}
+
+@media (max-width: 768px) {
+    .dashboard-main {
+        padding: 20px 15px;
+    }
+
+    .dashboard-header h1 {
+        font-size: 1.8em;
+    }
+
+    .logout-btn {
+        padding: 6px 14px;
+        font-size: 0.95em;
+    }
+
+    li {
+        padding: 15px 20px;
+        border-left-width: 6px;
+    }
+
+    .dashboard-main h2 {
+        font-size: 1.4em;
+        border-left-width: 4px;
+    }
+}

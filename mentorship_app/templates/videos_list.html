@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Vidéos pédagogiques</title>
+    <link rel="stylesheet" href="{% static 'css/content_pages.css' %}">
+</head>
+<body>
+    <h2>Vidéos disponibles</h2>
+    
+    <a href="{% url 'video_add' %}" class="btn-apply" style="margin-bottom: 20px; display: inline-block;">+ Ajouter une vidéo</a>
+    
+    <ul>
+        {% for video in videos %}
+            <li>
+                <h3>{{ video.title }}</h3>
+                <p><strong>Description :</strong> {{ video.description }}</p>
+                <p><strong>Publié par :</strong> {{ video.uploaded_by.username }}</p>
+                <p><strong>Date d’ajout :</strong> {{ video.uploaded_at|date:"d M Y H:i" }}</p>
+                <p><strong>Lien vidéo :</strong> 
+                    <a href="{{ video.video_file.url }}" target="_blank" rel="noopener noreferrer">Voir la vidéo</a>
+                </p>
+
+                <div class="actions">
+                    <a href="{% url 'video_edit' video.id %}" class="btn-action">Modifier</a>
+
+                    <form action="{% url 'video_delete' video.id %}" method="POST" onsubmit="return confirm('Voulez-vous vraiment supprimer cette vidéo ?');" class="inline-form">
+                        {% csrf_token %}
+                        <button type="submit" class="btn-action btn-delete">Supprimer</button>
+                    </form>
+                </div>
+
+                <hr>
+            </li>
+        {% empty %}
+            <li>Aucune vidéo disponible pour le moment.</li>
+        {% endfor %}
+    </ul>
+
+    <div class="return-container">
+        <a href="{% url 'dashboard' %}" class="return-button">← Retour au tableau de bord</a>
+    </div>
+</body>
+</html>

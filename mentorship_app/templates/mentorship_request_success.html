@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Demande envoyée</title>
+    {% load static %}
+<link rel="stylesheet" href="{% static 'css/mentorship_success.css' %}">
+</head>
+<body>
+    <h2>🎉 Votre demande de mentorat a bien été enregistrée !</h2>
+    <p>Merci pour votre intérêt pour le domaine : <strong>{{ interest }}</strong>.</p>
+    <a href="{% url 'dashboard' %}">↩ Retour</a>
+</body>
+</html>

@@ -1,4 +1,4 @@
-/* Styles généraux */
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f9f9f9;
@@ -7,7 +7,7 @@ body {
     text-align: center;
 }
 
-/* En-tête */
+
 .header {
     background: linear-gradient(135deg, #007bff, #0056b3);
     color: white;
@@ -24,7 +24,7 @@ body {
     margin-top: 5px;
 }
 
-/* Liste des fonctionnalités */
+
 .features-list {
     width: 80%;
     margin: 30px auto;
@@ -57,7 +57,6 @@ body {
     background-color: #e0e0e0;
 }
 
-/* Boutons */
 .btn {
     display: inline-block;
     padding: 12px 18px;
@@ -75,7 +74,7 @@ body {
     transform: scale(1.05);
 }
 
-/* Bouton retour */
+
 .return-section {
     margin-top: 20px;
 }
@@ -88,7 +87,7 @@ body {
     background-color: #e68900;
 }
 
-/* Pied de page */
+
 .footer {
     background-color: #333;
     color: white;

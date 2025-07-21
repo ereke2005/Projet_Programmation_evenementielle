@@ -1,55 +1,96 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Tableau de Bord | Mentorship</title>
+    <title>Tableau de Bord | Mentor</title>
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
 </head>
 <body>
     <header class="header">
-        <h1>Bienvenu(e), <span class="username">{{ user.username }}</span> 🎉✨🥳</h1>
+       
+        <p>Gérez vos sessions, vidéos, quiz et messages.</p>
     </header>
+    
+    <div class="header-content">
+        <a href="{% url 'logout' %}" class="logout-btn">Se déconnecter</a>
+    </div>
 
     <nav class="navbar">
         <ul>
             <li><a href="/">Accueil</a></li>
-            <li><a href="/mentorship_requests/">Mentorat</a></li>
-            <li><a href="/sessions/">Sessions</a></li>
-            <li><a href="/features/">Fonctionnalités</a></li>
-            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/dashboard/">Tableau de bord</a></li>
+            <li><a href="/create_session/">Créer une session</a></li>
+            <li><a href="/videos/"> Mes vidéos</a></li>
+            <li><a href="/quizzes/">Mes quiz</a></li>
+            
+            <li><a href="/mentorship_requests/">Demandes mentorat</a></li>
+            <li><a href="/contact/">Messages</a></li>
         </ul>
     </nav>
 
-    <section class="dashboard-content">
-        <h2>Actions rapides</h2>
-        <div class="actions-grid">
-            <a href="/create_session/" class="btn">Créer une Session</a>
-            <a href="/mentorship_requests/" class="btn">Proposer un Mentorat</a>
-            <a href="/sessions/" class="btn">Voir mes Sessions</a>
-            <a href="/features/" class="btn">Explorer les Fonctionnalités</a>
-        </div>
-    </section>
+    <main class="dashboard-content">
+       
+        <section class="quick-actions">
+            <h2>Actions rapides</h2>
+            <div class="actions-grid">
+                <a href="/create_session/" class="btn">Créer une session</a>
+                <a href="/videos/add/" class="btn"> Ajouter une vidéo</a>
+                <a href="/quizzes/add/" class="btn"> Créer un quiz</a>
+            </div>
+        </section>
 
-    <section class="sessions">
-        <h2>Sessions en cours</h2>
-        {% if sessions %}
-            <ul>
-                {% for session in sessions %}
-                    <li>
-                        <strong>{{ session.topic }}</strong><br>
-                        Mentor : {{ session.mentor.user.username }}<br>
-                        Début : {{ session.start_time|date:"d/m/Y H:i" }}<br>
-                        Fin : {{ session.end_time|date:"d/m/Y H:i" }}
-                    </li>
-                {% endfor %}
-            </ul>
-        {% else %}
-            <p>Aucune session en cours.</p>
-        {% endif %}
-    </section>
+        <section class="personalized-requests">
+            <h2>📩 Demandes de sessions personnalisées</h2>
+            {% if personalized_requests %}
+                <ul>
+                    {% for request in personalized_requests %}
+                        <li>
+                            <strong>Utilisateur :</strong> {{ request.user.username }}<br>
+                            <strong>Sujet :</strong> {{ request.subject }}<br>
+                            <strong>Détails :</strong> {{ request.details|linebreaksbr }}<br>
+                            <em>Soumis le {{ request.submitted_at|date:"d/m/Y H:i" }}</em>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>Aucune demande personnalisée pour le moment.</p>
+            {% endif %}
+        </section>
+
+        <section class="upload-pdf">
+            <h2>📄 Soumettre un document PDF</h2>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="file" name="pdf_file" accept="application/pdf" />
+                <button type="submit">Upload</button>
+              </form>
+              
+        </section>
+
+        <section class="sessions">
+            <h2>📆 Sessions en cours</h2>
+            {% if sessions %}
+                <ul>
+                    {% for session in sessions %}
+                        <li>
+                            <strong>{{ session.topic }}</strong><br>
+                            Du {{ session.start_time|date:"d/m/Y H:i" }} au {{ session.end_time|date:"d/m/Y H:i" }}<br>
+                            Élèves inscrits : {{ session.students.count }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>Aucune session programmée pour le moment.</p>
+            {% endif %}
+        </section>
+
+  
+
+
+    </main>
 
     <footer class="footer">
-        <p>&copy; 2025 Mentorship - Tous droits réservés.</p>
+        <p>&copy; 2025 Mentorship - Espace mentor</p>
     </footer>
 </body>
 </html>

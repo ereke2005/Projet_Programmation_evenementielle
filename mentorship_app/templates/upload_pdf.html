@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Uploader un PDF</title>
+    <link rel="stylesheet" href="{% static 'css/upload_pdf.css' %}">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Uploader un PDF</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Envoyer</button>
+        </form>
+    </div>
+</body>
+</html>

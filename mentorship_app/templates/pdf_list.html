@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des PDF</title>
+    <link rel="stylesheet" href="{% static 'css/pdf_list.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>📄 Liste des documents PDF</h1>
+
+     
+
+        <ul class="pdf-list">
+            {% for pdf in pdfs %}
+                <li class="pdf-item">
+                    <h3>{{ pdf.title }}</h3>
+                    <p class="description">{{ pdf.description }}</p>
+                    <p><strong>Ajouté le :</strong> {{ pdf.uploaded_at|date:"d M Y H:i" }}</p>
+                    <p>
+                        <a href="{{ pdf.file.url }}" class="link-view" target="_blank">📥 Télécharger</a>
+                    </p>
+                    <div class="actions">
+                        <a href="{% url 'edit_pdf' pdf.id %}" class="btn-edit">Modifier</a>
+                        <form action="{% url 'delete_pdf' pdf.id %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn-delete" onclick="return confirm('Supprimer ce fichier ?')">Supprimer</button>
+                        </form>
+                    </div>
+                </li>
+            {% empty %}
+                <li class="no-pdf">Aucun document PDF pour le moment.</li>
+            {% endfor %}
+        </ul>
+
+        <div class="return-container">
+            <a href="{% url 'dashboard' %}" class="return-button">← Retour au tableau de bord</a>
+        </div>
+    </div>
+</body>
+</html>

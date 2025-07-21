@@ -1,18 +1,18 @@
-/* Styles généraux */
+
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #f0f8ff; /* Bleu très clair */
+    background-color: #f0f8ff;
     color: #333;
     display: flex;
     flex-direction: column;
 }
 
-/* En-tête */
+
 header {
-    background-color: #0077cc; /* Bleu vif */
+    background-color: #0077cc; 
     color: white;
     padding: 20px 10px;
     text-align: center;
@@ -20,32 +20,32 @@ header {
     font-weight: bold;
 }
 
-/* Section principale */
+
 section {
-    flex-grow: 1; /* Assure que la section prend l'espace disponible */
+    flex-grow: 1; 
     margin: 50px auto;
     padding: 20px;
     max-width: 600px;
     text-align: center;
     background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 119, 204, 0.2); /* Ombre bleue subtile */
+    box-shadow: 0 4px 8px rgba(0, 119, 204, 0.2);
     border-radius: 10px;
 }
 
-/* Message de succès */
+
 .success-message {
     font-size: 20px;
     font-weight: bold;
-    color: #008000; /* Vert succès */
+    color: #008000; 
     margin-bottom: 20px;
 }
 
-/* Bouton */
+
 a.btn {
     display: inline-block;
     margin-top: 20px;
     padding: 12px 25px;
-    background-color: #008000; /* Vert succès */
+    background-color: #008000;
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -55,15 +55,15 @@ a.btn {
 }
 
 a.btn:hover {
-    background-color: #006400; /* Vert foncé au survol */
+    background-color: #006400;
 }
 
-/* Pied de page */
+
 footer {
     text-align: center;
     font-size: 14px;
     padding: 15px 0;
     background-color: #333;
     color: white;
-    margin-top: auto; /* Correction : Assure que le footer colle bien au bas */
+    margin-top: auto;
 }

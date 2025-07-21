@@ -1,108 +1,97 @@
-/* Styles généraux */
-html, body {
-    height: 100%;
+
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #f9f9f9;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('../images/2.jpg');
+    background-repeat: no-repeat;      
+    background-size: cover;             
+    background-position: center center; 
+    background-attachment: fixed;
+    color: #2c3e50;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-/* En-tête */
+
 .header {
-    background: linear-gradient(135deg, #007bff, #0056b3);
+    background-color: #34495e;
     color: white;
-    padding: 20px 0;
-    margin-bottom: 20px;
+    padding: 30px 20px;
     text-align: center;
-    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-.header h1 {
-    margin: 0;
-    font-size: 2.5em;
-}
 
-/* Section Formulaire */
 .form-section {
-    width: 60%;
-    margin: 0 auto;
-    padding: 20px 30px;
-    background: white;
-    border-radius: 8px;
-    
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    flex-grow: 1; /* Permet à cette section de remplir l'espace disponible */
-}
-
-.form-section label {
-    display: block;
-    font-size: 1em;
-    font-weight: bold;
-    margin-bottom: 5px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    text-align: center;
-    color: #333;
+    padding: 40px 20px;
 }
 
-.form-section input[type="text"],
-.form-section input[type="email"],
-.form-section textarea {
+form {
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    align-items: center;
-    text-align: center;
-    border-radius: 5px;
-    font-size: 1em;
-    font-family: 'Arial', sans-serif;
+    max-width: 500px;
 }
 
-.form-section input:focus,
-.form-section textarea:focus {
-    border-color: #007bff;
-    background-color: #f7faff;
-    outline: none;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-textarea {
-    resize: none; /* Empêche le redimensionnement */
-}
-
-/* Bouton d'envoi */
-.btn {
-    display: inline-block;
-    display: inline-block;
-    padding: 12px 20px;
-    margin-top: 10px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
+form label {
     font-weight: bold;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    color: #34495e;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #2980b9;
+    outline: none;
+}
+
+.btn {
+    margin-top: 25px;
+    background-color: #2980b9;
+    color: white;
+    padding: 12px;
+    width: 100%;
     border: none;
+    border-radius: 8px;
+    font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    margin-left: 390px;
-    border: none;
-   
-  
+    transition: background-color 0.3s;
 }
 
 .btn:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
+    background-color: #1c5980;
 }
 
-/* Pied de page */
+
 .footer {
-    background-color: #333;
-    color: white;
+    background-color: black;
     text-align: center;
-    font-size: 0.9em;
-    padding: 10px 0;
-    margin-top: auto; /* Assure que le footer reste en bas */
+    padding: 16px;
+    font-size: 14px;
+    color: #7f8c8d;
+    margin-top: auto;
 }

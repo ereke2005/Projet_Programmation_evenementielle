@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Créer un Quiz</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+</head>
+<body>
+    <h1>Créer un Quiz</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="question">Question :</label>
+        <textarea id="question" name="question" rows="3" required></textarea>
+
+        <label for="option1">Option 1 :</label>
+        <input type="text" name="option1" required>
+
+        <label for="option2">Option 2 :</label>
+        <input type="text" name="option2" required>
+
+        <label for="option3">Option 3 :</label>
+        <input type="text" name="option3" required>
+
+        <label for="correct_answer">Bonne réponse :</label>
+        <input type="text" name="correct_answer" required>
+
+        <button type="submit" class="btn-submit">Créer le quiz</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter une Vidéo</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+</head>
+<body>
+    <h1> Ajouter une Vidéo</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="title">Titre de la vidéo :</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="description">Description :</label>
+        <textarea id="description" name="description" rows="4" required></textarea>
+
+        <label for="video_file">Fichier vidéo :</label>
+        <input type="file" id="video_file" name="video_file" required>
+
+        <button type="submit" class="btn-submit">Publier</button>
+    </form>
+</body>
+</html>

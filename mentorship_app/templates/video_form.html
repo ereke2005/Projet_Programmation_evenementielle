@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ action }} une vidéo</title>
+    <link rel="stylesheet" href="{% static 'css/content_page.css' %}">
+</head>
+<body>
+    <h2>{{ action }} une vidéo</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <label for="title">Titre :</label><br>
+        <input type="text" id="title" name="title" value="{{ video.title|default_if_none:'' }}" required><br><br>
+
+        <label for="description">Description :</label><br>
+        <textarea id="description" name="description">{{ video.description|default_if_none:'' }}</textarea><br><br>
+
+        <label for="video_file">Fichier vidéo :</label><br>
+        <input type="file" id="video_file" name="video_file" {% if not video %}required{% endif %}><br><br>
+
+        <button type="submit">{{ action }}</button>
+    </form>
+    <br>
+    <a href="{% url 'videos_list' %}">← Retour à la liste des vidéos</a>
+</body>
+</html>

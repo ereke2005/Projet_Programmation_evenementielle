@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des Quiz</title>
+    <link rel="stylesheet" href="{% static 'css/content.css' %}">
+</head>
+<body>
+    <div class="header-content">
+        <h2>Quiz disponibles</h2>
+        <a href="{% url 'add_quiz' %}" class="btn btn-primary">➕ Ajouter un quiz</a>
+    </div>
+
+    <ul>
+        {% for quiz in quizzes %}
+            <li>
+                <strong>Question :</strong> {{ quiz.question }}<br>
+                <strong>Option 1 :</strong> {{ quiz.option1 }}<br>
+                <strong>Option 2 :</strong> {{ quiz.option2 }}<br>
+                <strong>Option 3 :</strong> {{ quiz.option3 }}<br>
+                <strong>Réponse correcte :</strong> {{ quiz.correct_answer }}<br>
+                <strong>Difficulté :</strong> {{ quiz.get_difficulty_display }}<br>
+
+                <a href="{% url 'quiz_edit' quiz.id %}" class="btn btn-edit">✏️ Modifier</a>
+                <a href="{% url 'quiz_delete' quiz.id %}" class="btn btn-delete" onclick="return confirm('Supprimer ce quiz ?');">🗑️ Supprimer</a>
+                <hr>
+            </li>
+        {% empty %}
+            <li>Aucun quiz trouvé.</li>
+        {% endfor %}
+    </ul>
+
+    <div class="header-content">
+        <a href="{% url 'dashboard' %}">← Retour au tableau de bord</a>
+    </div>
+</body>
+</html>
