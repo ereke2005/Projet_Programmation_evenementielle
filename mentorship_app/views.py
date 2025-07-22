@@ -649,3 +649,7 @@ def upload_pdf(request):
     return render(request, 'upload.html')
 
 
+@login_required
+def videos_lists(request):
+    videos = Video.objects.all()
+    return render(request, 'video_lists.html', {'videos': videos})

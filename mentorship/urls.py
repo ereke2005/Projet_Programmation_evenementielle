@@ -97,6 +97,8 @@ urlpatterns = [
     path('videos/add/', views.video_add, name='video_add'),
     path('videos/edit/<int:video_id>/', views.video_edit, name='video_edit'),
     path('videos/delete/<int:video_id>/', views.video_delete, name='video_delete'),
+    path('videoss/', views.videos_lists, name='videos_lists'),
+
  
     
 

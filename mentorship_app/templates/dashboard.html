@@ -57,16 +57,6 @@
             {% endif %}
         </section>
 
-        <section class="upload-pdf">
-            <h2>📄 Soumettre un document PDF</h2>
-            <form method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
-                <input type="file" name="pdf_file" accept="application/pdf" />
-                <button type="submit">Upload</button>
-              </form>
-              
-        </section>
-
         <section class="sessions">
             <h2>📆 Sessions en cours</h2>
             {% if sessions %}

@@ -20,7 +20,7 @@
     <main class="dashboard-main">
 
         <section class="custom-session-requests">
-            <h2>📌 Mes demandes de session personnalisée</h2>
+            <h2> Mes demandes de session personnalisée</h2>
             {% if demandes_personnalisees %}
                 <ul class="custom-request-list">
                     {% for demande in demandes_personnalisees %}
@@ -42,7 +42,7 @@
         <section class="resources">
             <h2> Ressources recommandées</h2>
             <ul class="resource-links">
-                <li><a href="{% url 'videos_list' %}"> Voir les vidéos pédagogiques</a></li>
+                <li><a href="{% url 'videos_lists' %}"> Voir les vidéos pédagogiques</a></li>
                 <li><a href="{% url 'quiz_lists' %}"> Participer à un quiz</a></li>
                 <li><a href="{% url 'demande_session' %}"> Demander une session personnalisée</a></li>
             </ul>
@@ -83,7 +83,7 @@
                             {% else %}
                                 <form method="POST" action="{% url 'apply_to_session' session.id %}">
                                     {% csrf_token %}
-                                    <button type="submit" class="btn-apply">✅ Je souhaite participer</button>
+                                    <button type="submit" class="btn-apply"> Je souhaite participer</button>
                                 </form>
                             {% endif %}
                         </li>
@@ -117,7 +117,7 @@
                             </li>
                         {% endfor %}
                     </ul>
-                    <button type="submit" class="btn-apply">📤 Postuler aux demandes sélectionnées</button>
+                    <button type="submit" class="btn-apply"> Postuler aux demandes sélectionnées</button>
                 </form>
             {% else %}
                 <p>Aucune demande de mentorat pour le moment.</p>

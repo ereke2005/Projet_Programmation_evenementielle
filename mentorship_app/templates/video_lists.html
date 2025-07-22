@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Vidéos pédagogiques</title>
+    <link rel="stylesheet" href="{% static 'css/videos.css' %}">
+</head>
+<body>
+    <header class="video-header">
+        <h1> Vidéos pédagogiques</h1>
+        <a href="{% url 'dashboard_student' %}" class="btn-retour">← Retour au tableau de bord</a>
+    </header>
+
+    <main class="video-main">
+        {% if videos %}
+            <div class="video-grid">
+                {% for video in videos %}
+                    <div class="video-card">
+                        <video controls width="100%">
+                            <source src="{{ video.video_file.url }}" type="video/mp4">
+                            Votre navigateur ne supporte pas la lecture vidéo.
+                        </video>
+                        <div class="video-info">
+                            <h3>{{ video.title }}</h3>
+                            <p>{{ video.description }}</p>
+                            <p class="uploaded-by">📤 Par : {{ video.uploaded_by.username }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p class="no-videos">Aucune vidéo disponible pour le moment.</p>
+        {% endif %}
+    </main>
+
+    <footer class="video-footer">
+        <p>&copy; 2025 Mentorship - Ressources pédagogiques</p>
+    </footer>
+</body>
+</html>

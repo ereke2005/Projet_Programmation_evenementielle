@@ -1,0 +1,71 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+.video-header {
+    background-color: #4a90e2;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.video-header h1 {
+    margin: 0;
+}
+
+.btn-retour {
+    background-color: white;
+    color: #4a90e2;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.video-main {
+    padding: 2rem;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.video-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.video-info h3 {
+    margin: 0.5rem 0 0.2rem;
+}
+
+.video-info p {
+    margin: 0.2rem 0;
+}
+
+.uploaded-by {
+    font-size: 0.85rem;
+    color: #777;
+}
+
+.no-videos {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #888;
+}
+
+.video-footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #eee;
+    margin-top: 2rem;
+}
